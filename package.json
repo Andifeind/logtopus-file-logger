@@ -1,0 +1,32 @@
+{
+  "name": "logtopus-file-logger",
+  "version": "0.0.0",
+  "description": "File logger module for Logtopus logger",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha --reporter lagoon-reporter tests/unit/**/*.spec.js --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Andifeind/logtopus-file-logger.git"
+  },
+  "keywords": [
+    "log",
+    "logger",
+    "filelog",
+    "filelogger",
+    "logtopus"
+  ],
+  "author": "Andi Heinkelein <andifeind@noname-media.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Andifeind/logtopus-file-logger/issues"
+  },
+  "homepage": "https://github.com/Andifeind/logtopus-file-logger#readme",
+  "devDependencies": {
+    "@noname-media/eslint-config-standard": "^1.1.0"
+  }
+}
