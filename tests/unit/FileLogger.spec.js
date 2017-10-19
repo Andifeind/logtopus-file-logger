@@ -32,7 +32,7 @@ describe('FileLogger', () => {
       })
 
       inspect(LOG_FILE).isFile()
-      inspect(LOG_FILE).fileEquals('[2017-10-18T20:13:03.000Z] info: Test log\n')
+      inspect(LOG_FILE).fileContains('[2017-10-18T20:13:03.000Z] info: Test log\n')
     })
   })
 })
