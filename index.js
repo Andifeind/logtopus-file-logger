@@ -8,28 +8,29 @@ class FileLogger {
   constructor (conf) {
     conf = conf || {}
 
-    this.file = conf.logfile || path.join(process.cwd(), 'logs/app.log')
+    this.file = path.resolve(process.cwd(), conf.logfile || './logs/app.log')
+    this.separator = conf.separator || ' '
     mkdirp(path.dirname(this.file))
   }
 
   log (msg) {
     const date = msg.time.toISOString()
 
-    let message = `[${date}] ${msg.type}: ${this.escape(msg.msg)}`
+    let message = `[${date}] ${msg.type}: ${this.escape(String(msg.msg))}`
     let data
 
     if (msg.data) {
       data = msg.data.map(data => {
         if (typeof data === 'object') {
-          return JSON.stringify(data)
+          data = JSON.stringify(data)
         }
 
         return this.escape(String(data))
-      }).join('\n')
+      }).join(this.separator)
     }
 
     if (data) {
-      message += '\n' + data
+      message += this.separator + data
     }
 
     fs.appendFileSync(this.file, message + '\n')
