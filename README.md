@@ -11,5 +11,5 @@ Configuration
 ```cson
 file:
   logfile: './logs/app.log' # Logfile, relative to process.cwd(),
-  separator: ' ' # Argument separator.
+  separator: ' ' # Data separator.
 ```
