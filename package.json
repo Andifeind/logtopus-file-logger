@@ -1,6 +1,6 @@
 {
   "name": "logtopus-file-logger",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "File logger module for Logtopus logger",
   "main": "index.js",
   "directories": {
